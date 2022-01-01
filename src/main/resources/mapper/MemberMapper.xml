@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wool.spring">
+
+<select id="memberSelectAll" resultType="MemberDTO">
+select memberId, name, email from member
+</select>
+
+<select id="memberSelect" resultType="MemberDTO" parameterType="MemberDTO">
+select memberId, memberPassword , name, email , phoneNumber , age , signUpDate from member
+where memberId = #{memberId}
+</select>
+<select id="permissionCheck" resultType="String" parameterType="MemberDTO">
+select permission from permission
+where memberId = #{memberId}
+</select>
+
+<insert id="memberInsert" parameterType="MemberDTO">
+insert into member
+(memberId, memberPassword , name, email , phoneNumber , age , signUpDate) 
+values (#{memberId}, #{memberPassword} , #{name}, #{email} , #{phoneNumber} , 
+ #{age} , (sysdate))
+</insert>
+<insert id="permissionInsert" parameterType="MemberDTO">
+insert into permission ( no , memberId , permission)
+values ( NO_SEQ.NEXTVAL , #{memberId} , #{permission})
+</insert>
+
+<update id="memberUpdate" parameterType="MemberDTO">
+update member set
+memberPassword= #{memberPassword} , name= #{name} , email= #{email} , phoneNumber= #{phoneNumber} , age= #{age} 
+where memberId = #{memberId}
+</update>
+
+<update id="permissionUpdate" parameterType="MemberDTO">
+update permission set permission = #{permission}
+where memberId = #{memberId}
+</update>
+
+<delete id="memberDelete" parameterType="String">
+delete from member where memberId = #{memberId}
+</delete>
+<delete id="permissionDelete" parameterType="String">
+delete from permission where memberId = #{memberId}
+</delete>
+
+</mapper>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="wool.spring">
+<select id="Login" parameterType="MemberDTO" resultType="int">
+select COUNT(*) from member
+where memberId = #{memberId} and memberPassword = #{memberPassword}
+</select>
+
+
+</mapper>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 별칭 환경을 설정 -->
+	<typeAliases>
+		<!-- DeptDTO 클래스에 대한 별칭을 설정 -->
+		<typeAlias alias="MemberDTO" type="wool.trade.dto.MemberDTO" />
+		<typeAlias alias="NoticeDTO" type="wool.trade.dto.NoticeDTO" />
+	</typeAliases>
+</configuration>

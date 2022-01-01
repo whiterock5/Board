@@ -1,0 +1,127 @@
+* { padding: 0; margin: 0; font-family: 'Noto Sans KR', sans-serif; font-size: 14px; color:#666; 
+    outline-style: none; box-sizing: border-box; }
+a { text-decoration: none; }
+li { list-style: none; }
+img { border: none; }
+table { border-collapse: collapse; border-spacing: 0px; }
+address { font-style: normal; }
+fieldset { border: none; }
+input[type=button], input[type=submit], input[type=reset], input[type=image], button{ cursor: pointer; }
+lable.away { position: absolute; left: -999em; }
+
+body{
+	
+	background-color: HSL(200, 33% ,96%) ;
+
+}
+
+.line {
+	
+	width : 450px;
+	height: 5px;
+	background-color: #007bff; 
+	
+}
+
+.login {
+	display:block;
+    margin: 0 auto;
+    margin-top: 100px;
+    display: block;
+    width: 400px;
+    height: 460px;
+    border: none;
+    background-color: white;
+    border-radius: 8px; 
+    overflow: hidden;   
+    text-align: center;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
+    
+}
+
+#login_logo{
+	margin-top : 50px;
+	display:block;
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 30px;
+    
+}
+
+.login_box{
+    text-align:center;
+    box-sizing: border-box;
+    display: block;
+    width: 400px;
+    height: 60px;
+    margin-bottom: 3px;
+}
+
+
+.login_text{
+    width: 330px;
+    height: 45px;
+    border: solid 1px #e8e8e8;
+    padding: 0 10px;
+    color: #333;
+    font-size: 14px;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
+}
+
+.login_text::placeholder{
+    color:#aaa;
+}
+
+
+.btn-login{
+    display: block;
+    width: 330px;
+    height: 45px;
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background : #007bff;
+    color : #fff;
+    border: none;
+    border-radius: 8px;
+
+}
+
+.login_sub {
+    display: block;
+    width:  400px;
+    height: 80px;
+    border: none;
+    background-color: HSL( 200 , 25%, 94% );
+    margin: 0 auto;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+    padding-top : 25px;
+}
+
+.login_sub2{ 
+    text-align: center;
+    float: right;
+    width: 150px;
+    height: 20px;
+    color: #aaa;
+    margin-top: 20px;
+    margin-left: 52px;
+    font-weight: 700;
+}
+.blue{
+
+    color:#007bff;
+
+}
+
+.blue2 {
+
+    background-color: #007bff;
+
+}

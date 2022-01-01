@@ -1,0 +1,16 @@
+* { border: none;}
+
+.list {
+	height: 40px;
+	border-bottom: 1px solid black;
+}
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.blank { height: 20px; }
+
+.bottom_line{
+	border-bottom: 2px solid black;
+	margin-bottom: 40px;
+}
+

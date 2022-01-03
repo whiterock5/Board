@@ -1,4 +1,4 @@
-package wool.trade.dao;
+package com.wool.board.dao;
 
 import java.util.List;
 
@@ -8,34 +8,39 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import wool.trade.dto.NoticeDTO;
+import com.wool.board.dto.BoardDTO;
 
 @Repository
 
 @EnableAspectJAutoProxy(proxyTargetClass = true)
-public class NoticeDAO {
+public class BoardDAO {
 
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
 	
-	public List<NoticeDTO> NoticeSelectAll() {
-		return sqlSessionTemplate.selectList("noticeSelectAll");	
+	public List<BoardDTO> BoardSelectAll() {
+		return sqlSessionTemplate.selectList("boardSelectAll");	
 	}
-	public NoticeDTO NoticeSelect(String title) {
-		return sqlSessionTemplate.selectOne("noriceSelect", title);	
+	
+	public BoardDTO BoardSelect(int bno) {
+		
+		return sqlSessionTemplate.selectOne("boardSelect", bno);	
 	}
 	
 	@Transactional
-	public void NoticeInsert(NoticeDTO noticeDTO) {
-		sqlSessionTemplate.insert("noticeInsert" , noticeDTO);	
+	public void BoardInsert(BoardDTO boardDTO) {
+		sqlSessionTemplate.insert("boardInsert" , boardDTO);	
 	}
 	
-	public void NoticeUpdate(NoticeDTO noticeDTO) {
-		sqlSessionTemplate.update("noticeUpdate" , noticeDTO);		
+	public void BoardUpdate(BoardDTO boardDTO) {
+		sqlSessionTemplate.update("boardUpdate" , boardDTO);		
 	}
 	
-	public void MemberDelete(String title) {
-		sqlSessionTemplate.delete("permissionDelete", title);
+	public void BoardDelete(int bno) {
+		sqlSessionTemplate.delete("boardnDelete", bno);
+	}
+	public void BoardHit(int bno) {
+		sqlSessionTemplate.update("boardHit" , bno);	
 	}
 
 }

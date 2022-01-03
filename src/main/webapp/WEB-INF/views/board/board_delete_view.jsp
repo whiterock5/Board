@@ -13,8 +13,8 @@
 </head>
 <body>
 <script type="text/javascript">
-alert("${no} 번의 공지를 삭제했습니다. " );
-location.href="./MemberSelect.go"
+alert("해당글을 삭제 하였습니다." );
+location.href="./BoardSelectAll"
 </script>
 </body>
 </html>

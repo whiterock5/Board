@@ -1,4 +1,4 @@
-package wool.trade.dto;
+package com.wool.board.dto;
 
 import java.sql.Date;
 

@@ -29,13 +29,13 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-	<context:component-scan base-package="wool.trade.*" />
+	<context:component-scan base-package="com.wool.board" />
 
-	<beans:bean id="AuthLoginInterceptor" class="wool.trade.interceptor.AuthLoginInterceptor"></beans:bean>
 	<interceptors>
 		<interceptor>
 			<mapping path="/member/*" />
-			<beans:ref bean="AuthLoginInterceptor" />
+			<!-- <mapping path="/board/*" /> -->
+			<beans:bean id="AuthLoginInterceptor" class="com.wool.board.interceptor.AuthLoginInterceptor" />
 		</interceptor>
 	</interceptors> 
 

@@ -1,4 +1,4 @@
-<%@page import="wool.trade.dto.MemberDTO"%>
+<%@page import="com.wool.board.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,15 +8,13 @@
 <title>로그인확인</title>
 </head>
 <body>
-<script type="text/javascript">
+
+<div>
+	!! 오류 !!
+	입력하신 아이디 / 비밀번호가 올바르지 않습니다.
 	
-</script>
-<% 
-	MemberDTO memberDTO = new MemberDTO();
-	memberDTO = (MemberDTO) session.getAttribute("login");
-	String memberId = (String) memberDTO.getMemberId(); 
-	String memberPassword = (String) memberDTO.getMemberPassword(); 
-	out.print("세션:" + memberId);
-%>
+	<a href="javascript:window.history.back();"> 이전 페이지로 </a> 
+</div>
+
 </body>
 </html>

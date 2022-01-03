@@ -1,11 +1,11 @@
-package wool.trade.dao;
+package com.wool.board.dao;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Repository;
 
-import wool.trade.dto.MemberDTO;
+import com.wool.board.dto.MemberDTO;
 
 @Repository
 @EnableAspectJAutoProxy(proxyTargetClass = true)

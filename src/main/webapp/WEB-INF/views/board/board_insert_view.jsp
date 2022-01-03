@@ -4,15 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> 부서 입력 </title>
-
+<title> 게시판 </title>
 </head>
 <body>
 <script type="text/javascript">
-alert("제목 ${title} 등록했습니다.")
-location.href="./NoticeSelect.go"
+location.href="./BoardSelect?bno=${bno}"
 </script>
-
 
 </body>
 </html>

@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +8,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./css/common.css">
+<link rel="stylesheet" type="text/css" href="./css/board.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 <script src="./js/jquery-3.5.1.min.js" type="text/javascript"></script>
 <script src="./js/bootstrap.min.js" type="text/javascript"></script>
 <script src="./js/jquery.validate.min.js" type="text/javascript"></script>
@@ -35,29 +39,20 @@
 	</nav>
 </header>
 <section>
-	<div class="container col-5 text-center">
-	<h2 class="mt-4">공지 사항 등록</h2>
-	<p>공지사항을 등록할 수 있습니다.</p>
+		<div class="container col-12 board">
+		<h5 class="title"> 
+			<i class="bi bi-box"></i> 이것저것 게시판  <b class="title-sub">ㅣ  자유게시판 입니다.</b> 
+		</h5>
 		<!-- 유효성 검사 미적용됨. 적용시킬것  -->
-		<form action="./NoticeInsertView.go" method="post"  class="form">
+		<form action="./BoardInsert" method="post" class="form">
 			
-			 	<div class="col-12 my-3">
-					<label for="title"  class="col-12">제목</label> 
-					<input type="text" id="title" name="title" class="form-control col-12" placeholder="Text input"> 
+			 	<div class="title_insert">
+					<label for="title"  id="titleLabel">제목</label> 
+					<input type="text" id="title" name="title" > 
+					<input type="hidden" id="memberId" name="memberId"  value="${sessionScope.login}"> 
 				</div>
-				
-				<div class="col-12 my-3">
-				<label for="contents" class="col-12 away">내용입력</label>
-				<textarea  id="contents" name="contents" class="form-control col-12"></textarea>
-				</div>
-				
-				<div class="col-12 bottom_btn">
-				
-				<input type="submit" value="등록" class="btn btn-primary left"> 
-				
-				<input type="reset" value="초기화" class="btn btn-danger right">
-				
-				</div>
+				<textarea  id="contents" name="contents" id="contents"></textarea>
+				<input type="submit" value="작성" class="btn btn-outline-light btn-sm"> 
 		</form>
 	</div>
 	</section>

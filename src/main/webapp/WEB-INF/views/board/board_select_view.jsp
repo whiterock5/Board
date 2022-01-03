@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +9,8 @@
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 <link rel="stylesheet" type="text/css" href="./css/list.css">
+<link rel="stylesheet" type="text/css" href="./css/board.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 <script src="./js/jquery-3.5.1.min.js" type="text/javascript"></script>
 <script src="./js/bootstrap.min.js" type="text/javascript"></script>
 </head>
@@ -37,41 +39,51 @@
 	</header>
 
 	<section>
-
-
-		<div class="container col-5 text-center">
-			<h2 class="mt-4">공지사항 상세보기</h2>
-			<p>공지사항 수정 및 삭제가 가능 합니다.</p>
-
-			<table class="col-12 bottom_line">
-				<tr class="list">
-					<th class="text-left">제목</th>
-					<td class="text-right">${title}</td>
-				</tr>
-				<tr class="blank"></tr>
-				<tr class="list">
-					<th class="text-left">글번호</th>
-					<td class="text-right">${no}
-					</td>
-				</tr>
-				<tr class="blank"></tr>
-				<tr class="list">
-					<th class="text-left">최초작성일자</th>
-					<td class="text-right">${writingTime}</td>
-				</tr>
-				<tr class="blank"></tr>
-				<tr class="list">
-					<th class="text-left">내용</th>
-					<td class="text-right">${contents}</td>
-				</tr>
-			</table>
-			<div class="bottom_btn">
-				 <a href="./NoticeUpdate.go?no=${no}"
-					class="btn btn-primary left"> 수정 </a> 
-					<a onclick="return confirm('정말로 삭제하시겠습니까 ?');" href="./NoticeDelete.go?no=${no}"
-					class="btn btn-danger right"> 삭제 </a>
-			</div>
+		<div class="container col-12 board">
+		<h5 class="title"> 
+			<i class="bi bi-box"></i> 이것저것 게시판  <b class="title-sub">ㅣ  자유게시판 입니다.</b> 
+		</h5>
+		<div>
+		<c:set var="Id" value="" />
+		<c:set var="loginId" value="" />
+		<c:if test="${boardDTO.memberId eq sessionScope.login}">
+			<a class="btn btn-outline-light btn-sm"><i class="bi bi-pencil-square"></i>&nbsp; 수정</a> <a class="btn btn-outline-light btn-sm"><i class="bi bi-x-square"></i>&nbsp; 삭제</a>
+		</c:if>
 		</div>
+		<div class="title hl">
+			${boardDTO.title}
+		</div>
+		<div class="title boardid">
+		<c:if test="${boardDTO.modifiedTime != null }">
+			<span>${boardDTO.memberId} <i class="bi bi-person-fill"></i></span><span class="right">추천 : ${boardDTO.recommend} ㅣ 조회수 : ${boardDTO.hit} ㅣ 작성시간 : ${boardDTO.writingTime} ㅣ 수정시간 : ${boardDTO.modifiedTime}</span>
+		</c:if>
+		<c:if test="${boardDTO.modifiedTime == null }">
+			<span>${boardDTO.memberId} <i class="bi bi-person-fill"></i></span><span class="right">추천 : ${boardDTO.recommend} ㅣ 조회수 : ${boardDTO.hit} ㅣ 작성시간 : ${boardDTO.writingTime} </span>
+		</c:if>
+		</div>
+		
+		<div class="title contents">
+			내용 : ${boardDTO.contents}
+		</div>
+		<div class="title">
+			<i class="bi bi-chat-dots"></i> 댓글
+		</div>
+		
+		<div>
+			댓글표시
+		</div>
+		<div>
+			댓글 작성
+			<form>
+				<textarea></textarea><input type="submit" value="작성">
+			</form>
+		</div>
+		
+		
+		
+		
+		
+	</div>
 	</section>
 	<footer> </footer>
 </body>

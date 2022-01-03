@@ -1,4 +1,4 @@
-package wool.trade.interceptor;
+package com.wool.board.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-import wool.trade.dto.MemberDTO;
+import com.wool.board.dto.MemberDTO;
 
 public class AuthLoginInterceptor extends HandlerInterceptorAdapter {
 
@@ -16,7 +16,7 @@ public class AuthLoginInterceptor extends HandlerInterceptorAdapter {
         HttpSession session = request.getSession();
         MemberDTO memberDTO = (MemberDTO) session.getAttribute("login");
         if(memberDTO == null){
-            response.sendRedirect("./Login");
+            response.sendRedirect("./index");
             return false;
         }
         return true;

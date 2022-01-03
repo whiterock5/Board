@@ -1,12 +1,12 @@
-package wool.trade.service;
+package com.wool.board.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import wool.trade.dao.MemberDAO;
-import wool.trade.dto.MemberDTO;
+import com.wool.board.dao.MemberDAO;
+import com.wool.board.dto.MemberDTO;
 
 @Service
 public class MemberService {

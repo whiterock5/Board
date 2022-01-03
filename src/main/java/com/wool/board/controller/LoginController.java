@@ -1,5 +1,5 @@
 
-package wool.trade.controller;
+package com.wool.board.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import wool.trade.dto.MemberDTO;
-import wool.trade.service.LoginService;
+import com.wool.board.dto.MemberDTO;
+import com.wool.board.service.LoginService;
 
 @Controller
 public class LoginController {
@@ -48,7 +48,7 @@ public class LoginController {
 		returnURL = "";
 
 		if (result == 1) {
-			session.setAttribute("login", memberDTO);
+			session.setAttribute("login", memberDTO.getMemberId());
 			
 			returnURL = "../../index";
 		} else {

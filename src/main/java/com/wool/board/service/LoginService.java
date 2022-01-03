@@ -1,10 +1,10 @@
-package wool.trade.service;
+package com.wool.board.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import wool.trade.dao.LoginDAO;
-import wool.trade.dto.MemberDTO;
+import com.wool.board.dao.LoginDAO;
+import com.wool.board.dto.MemberDTO;
 
 @Service
 public class LoginService  {

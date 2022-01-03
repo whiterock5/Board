@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="wool.spring.trade">
+	<logger name="com.wool.board">
 		<level value="info" />
 	</logger>
 	

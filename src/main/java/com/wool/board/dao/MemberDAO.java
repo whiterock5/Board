@@ -1,4 +1,4 @@
-package wool.trade.dao;
+package com.wool.board.dao;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import wool.trade.dto.MemberDTO;
+import com.wool.board.dto.MemberDTO;
 
 @Repository
 

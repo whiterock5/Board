@@ -1,4 +1,4 @@
-package wool.trade.controller;
+package com.wool.board.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,8 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import wool.trade.dto.MemberDTO;
-import wool.trade.service.MemberService;
+import com.wool.board.dto.MemberDTO;
+import com.wool.board.service.MemberService;
 
 
 @Controller

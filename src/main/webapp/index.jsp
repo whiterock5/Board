@@ -10,13 +10,14 @@
 <body>
 <p>메인화면</p>
 
-<c:if test="${login.memberId == null }">
+<c:if test="${login == null }">
 <a href="./Login">로그인</a>
 </c:if>
 <br/>
 
-<c:if test="${login.memberId != null}">
+<c:if test="${login != null}">
 	<a href="./MemberSelectAll">회원관리</a> <br />
+	<a href="./BoardSelectAll">게시판가기</a> <br />
 	<a href="./LogOut">로그아웃</a>
 </c:if>
 

@@ -1,8 +1,7 @@
 package com.wool.board.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+import java.util.List;
 
-import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -27,15 +26,17 @@ public class BoardController {
 	
 	
 	@RequestMapping(value = "/BoardSelectAll", method = RequestMethod.GET)
-		public String NoticeSelectAll(Model model) {
+		public String BoardSelectAll(Model model) {
 			model.addAttribute("list", boardService.BoardListAll());
 			return "./board/board_select_all_view";
 	}
 		
 	@RequestMapping(value = "/BoardSelect", method = RequestMethod.GET)
-	public String NoticeSelect(Model model, BoardDTO boardDTO) {
+	public String BoardSelect(Model model, BoardDTO boardDTO) {
 		
 		model.addAttribute("boardDTO",boardService.BoardSelect(boardDTO.getBno()));
+		List<BoardDTO> reply = boardService.ReplySelect(boardDTO.getBno());
+		model.addAttribute("reply" , reply );
 		
 		return "./board/board_select_view";
 	}
@@ -73,4 +74,22 @@ public class BoardController {
 			return "./board/board_delete_view";
 		}
 		
+		
+		@RequestMapping(value = "/ReplyInsert", method = RequestMethod.POST)
+		public String ReplyInsert(BoardDTO boardDTO) {
+			int rno = boardService.ReplyCheck(boardDTO) + 1;
+			boardDTO.setRno(rno);
+			boardService.ReplyInsert(boardDTO);
+			return "./board/reply_view";
+		}
+		
+		@RequestMapping(value = "/ReplyRemove", method = RequestMethod.GET)
+		public String ReplyDelete(BoardDTO boardDTO, @RequestParam(value="rno") int rno , @RequestParam(value="bno") int bno ) {
+			boardDTO.setBno(bno);
+			boardDTO.setRno(rno);
+			boardService.ReplyDelete(boardDTO);
+			return "./board/board_delete_view";
+		}
+		
+
 }

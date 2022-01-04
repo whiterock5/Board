@@ -54,8 +54,15 @@ $(document).ready(function() {
 			<i class="bi bi-box"></i> 이것저것 게시판  <b class="title-sub">ㅣ  자유게시판 입니다.</b> 
 		</h5>
 		<form action="./BoardUpdate" method="post" class="form">
+		<select class="titleLabel tap" id="division" name="division">
+						<option value="잡담">잡담</option>
+						<option value="정보">정보</option>
+						<c:if test="${ sessionScope.login eq 'admin' }">
+							<option value="공지">공지</option>
+						</c:if>
+					</select>
 			 	<div class="title_insert">
-					<label for="title"  id="titleLabel">제목</label> 
+					<label for="title"  class="titleLabel">제목</label> 
 					<input type="text" id="title" name="title" value="${boardDTO.title}" > 
 					<input type="hidden" id="memberId" name="memberId"  value="${sessionScope.login}"> 
 				</div>

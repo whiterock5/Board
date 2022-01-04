@@ -56,17 +56,17 @@ $(document).ready(function() {
 		<div>
 		<c:if test="${boardDTO.memberId eq sessionScope.login}">
 			<a class="btn btn-outline-light btn-sm" href="./BoardUpdate?Bno=${boardDTO.bno}"><i class="bi bi-pencil-square"></i>&nbsp; 수정</a> 
-			<a onclick="return confirm('정말로 삭제하시겠습니까 ?');" class="btn btn-outline-light btn-sm" href="./BoardDelete?Bno=${boardDTO.bno}"><i class="bi bi-x-square"></i>&nbsp; 삭제</a>
+			<a onclick="return confirm('정말로 글을 삭제하시겠습니까 ?');" class="btn btn-outline-light btn-sm" href="./BoardDelete?Bno=${boardDTO.bno}"><i class="bi bi-x-square"></i>&nbsp; 삭제</a>
 		</c:if>
 		</div>
 		<div class="title hl">
 			${boardDTO.title}
 		</div>
 		<div class="title boardid">
-		<c:if test="${boardDTO.modifiedTime != null }">
+		<c:if test="${boardDTO.modifiedTime ne null }">
 			<span>${boardDTO.memberId} <i class="bi bi-person-fill"></i></span><span class="right">추천 : ${boardDTO.recommend} ㅣ 조회수 : ${boardDTO.hit} ㅣ 작성시간 : ${boardDTO.writingTime} ㅣ 수정시간 : ${boardDTO.modifiedTime}</span>
 		</c:if>
-		<c:if test="${boardDTO.modifiedTime == null }">
+		<c:if test="${boardDTO.modifiedTime eq null }">
 			<span>${boardDTO.memberId} <i class="bi bi-person-fill"></i></span><span class="right">추천 : ${boardDTO.recommend} ㅣ 조회수 : ${boardDTO.hit} ㅣ 작성시간 : ${boardDTO.writingTime} </span>
 		</c:if>
 		</div>
@@ -79,12 +79,24 @@ $(document).ready(function() {
 		</div>
 		
 		<div>
-			댓글표시
+		<c:if test="${reply ne null }">
+			<c:forEach var="reply" items="${reply}">
+			<div class="title">
+				작성자 : ${reply.memberId} 작성일 : ${reply.rwritingTime} 
+				<c:if test="${sessionScope.login eq reply.memberId }"> | <a class="" onclick="return confirm('정말로 댓글을 삭제하시겠습니까 ?');" href="./ReplyRemove?rno=${reply.rno}&bno=${boardDTO.bno}"><i class="bi bi-x-square"></i>삭제</a></c:if>
+				
+				내용 : ${reply.rcontents}
+				
+			</div>
+			</c:forEach>
+			</c:if>
 		</div>
 		<div>
 			댓글 작성
-			<form>
-				<textarea></textarea><input type="submit" value="작성">
+			<form action="./ReplyInsert" method="post">
+				<textarea id="rcontents" name="rcontents"></textarea><input type="submit" value="작성">
+				<input type="hidden" value="${boardDTO.bno}" id="bno" name="bno">
+				<input type="hidden" value="${sessionScope.login}" id="memberId" name="memberId">
 			</form>
 		</div>
 		

@@ -84,21 +84,26 @@ label {
 	box-sizing: border-box;
 }
 
-#titleLabel{
+.titleLabel{
 	height: 100%;
 	margin: 0;
 	color : #e2e2e2;
-	width: 5%;
-	border: 1px solid #5a5a64;
+	width: 6%;
+	border-right: 1px solid #5a5a64;
 	text-align: center;
 	background-color: #333;
 	box-sizing: border-box;
 }
 
+.tap { 
+	width: 10%;
+	border-bottom: 0;
+ }
+
 #title {
 	height: 100%;
 	margin: 0;
-	width: 94%;
+	width: 92%;
 	background-color: #222;
 	color : #e2e2e2;
 	box-sizing: border-box;
@@ -144,4 +149,13 @@ label {
 
 .contents:focus{
 	outline: none;
+}
+
+.division{
+	
+	font-size: 12px;
+	background-color: #333;
+	border-radius: 5px;
+	padding: 2px;
+	
 }

@@ -20,6 +20,7 @@ public class BoardService {
 	public List<BoardDTO> BoardListAll() {
 		return boardDAO.BoardSelectAll();
 	}
+	
 	public BoardDTO BoardSelect(int bno) {
 		boardDAO.BoardHit(bno);
 		return boardDAO.BoardSelect(bno);		
@@ -35,5 +36,21 @@ public class BoardService {
 	
 	public void BoardDelete(int bno) {
 		boardDAO.BoardDelete(bno);
+	}
+	
+	public List<BoardDTO> ReplySelect(int bno) {
+		return boardDAO.ReplySelect(bno);
+	}
+	
+	public void ReplyInsert(BoardDTO boardDTO) {
+		boardDAO.ReplyInsert(boardDTO);
+	}
+	
+	public int ReplyCheck(BoardDTO boardDTO) {
+		return boardDAO.ReplyCheck(boardDTO);
+	}
+	
+	public void ReplyDelete(BoardDTO boardDTO) {
+		boardDAO.ReplyDelete(boardDTO);
 	}
 }

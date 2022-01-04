@@ -62,11 +62,11 @@
 
 				<c:forEach var="list" items="${list}">
 				
-					<tr  class="tr_a" onclick="location.href='./BoardSelect?Bno=${list.getBno()}'" style="cursor:pointer"
+					<tr class="tr_a" onclick="location.href='./BoardSelect?Bno=${list.getBno()}'" style="cursor:pointer"
 					onMouseOver="this.style.backgroundColor='#5a5a64';" onMouseOut="this.style.backgroundColor=''">
 					
 						<td>${list.getBno()}</td>
-						<td>${list.getTitle()}</td>
+						<td><b class="division">${list.division}</b> ${list.getTitle()}</td>
 						<td>${list.getMemberId()}</td>
 						<td>${list.getWritingTime()}</td>
 						<td>${list.getHit()}</td>

@@ -25,4 +25,16 @@ public class BoardDTO {
 	private int hit;
 	//추천수
 	private int recommend;
+	//분류
+	private String division;
+	
+	//-------------
+	
+	//댓글번호
+	private int rno;
+	//댓글내용
+	private String rcontents;
+	//댓글 작성 시간
+	private String rwritingTime;
+	
 }

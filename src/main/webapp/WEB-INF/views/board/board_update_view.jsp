@@ -13,9 +13,8 @@
 </head>
 <body>
 <script type="text/javascript">
-
-alert("${no}번의 글을 수정하였습니다.")
-location.href="./NoticeSelect.go"
+alert("수정하였습니다.")
+location.href="./BoardSelect?bno=${boardDTO.bno}"
 </script>
 </body>
 </html> 	

@@ -1,5 +1,8 @@
 package com.wool.board.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -9,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.wool.board.dto.BoardDTO;
 import com.wool.board.service.BoardService;
@@ -25,7 +29,6 @@ public class BoardController {
 	@RequestMapping(value = "/BoardSelectAll", method = RequestMethod.GET)
 		public String NoticeSelectAll(Model model) {
 			model.addAttribute("list", boardService.BoardListAll());
-			logger.info("list", model);
 			return "./board/board_select_all_view";
 	}
 		
@@ -37,7 +40,7 @@ public class BoardController {
 		return "./board/board_select_view";
 	}
 		
-		//공지 추가
+	
 		@RequestMapping(value = "/BoardInsert", method = RequestMethod.GET)
 		public String BoardInsert() {
 			return "./board/board_insert";
@@ -49,22 +52,23 @@ public class BoardController {
 			return "./board/board_insert_view";
 		}
 		
-		//공지 수정
+	
 		@RequestMapping(value = "/BoardUpdate", method = RequestMethod.GET)
-		public String NoticeUpdate() {
-			return "./board/notice_update";
+		public String BoardUpdate(@RequestParam(value="Bno") int Bno, Model model , BoardDTO boardDTO) {
+			model.addAttribute("boardDTO", boardService.BoardSelect(Bno));
+			return "./board/board_update";
 		}
 		
 		@RequestMapping(value = "/BoardUpdate", method = RequestMethod.POST)
-		public String NoticeUpdate(Model model, BoardDTO noticeDTO) {
-			model.addAttribute(noticeDTO);
-			boardService.BoardUpdate(noticeDTO);
+		public String BoardUpdate(Model model, BoardDTO boardDTO) {
+			model.addAttribute("boardDTO" , boardDTO);
+			boardService.BoardUpdate(boardDTO);
 			return "./board/board_update_view";
 		}
 		
-		//공지 삭제
+	
 		@RequestMapping(value = "/BoardDelete", method = RequestMethod.GET)
-		public String NoticeDelete(int bno) {
+		public String BoardDelete(@RequestParam(value="Bno") int bno) {
 			boardService.BoardDelete(bno);
 			return "./board/board_delete_view";
 		}

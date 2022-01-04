@@ -29,8 +29,8 @@ public class BoardService {
 		boardDAO.BoardInsert(boardDTO);
 	}
 	
-	public void BoardUpdate(BoardDTO noticeDTO) {
-		boardDAO.BoardUpdate(noticeDTO);
+	public void BoardUpdate(BoardDTO boardDTO) {
+		boardDAO.BoardUpdate(boardDTO);
 	}
 	
 	public void BoardDelete(int bno) {

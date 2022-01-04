@@ -13,7 +13,7 @@
 </head>
 <body>
 <script type="text/javascript">
-alert("해당글을 삭제 하였습니다." );
+alert("해당 글을 삭제 하였습니다.")
 location.href="./BoardSelectAll"
 </script>
 </body>

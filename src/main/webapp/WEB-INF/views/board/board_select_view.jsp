@@ -13,6 +13,16 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 <script src="./js/jquery-3.5.1.min.js" type="text/javascript"></script>
 <script src="./js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+//글 내용 높이 자동조절
+$(document).ready(function() {
+	  $('textarea').on( 'keyup', function (e){
+	    $(this).css('height', 'auto');
+	    $(this).height(this.scrollHeight);
+	  });
+	  $('textarea').keyup();
+	});
+</script>
 </head>
 <body>
 	<header class="sticky-top">
@@ -44,10 +54,9 @@
 			<i class="bi bi-box"></i> 이것저것 게시판  <b class="title-sub">ㅣ  자유게시판 입니다.</b> 
 		</h5>
 		<div>
-		<c:set var="Id" value="" />
-		<c:set var="loginId" value="" />
 		<c:if test="${boardDTO.memberId eq sessionScope.login}">
-			<a class="btn btn-outline-light btn-sm"><i class="bi bi-pencil-square"></i>&nbsp; 수정</a> <a class="btn btn-outline-light btn-sm"><i class="bi bi-x-square"></i>&nbsp; 삭제</a>
+			<a class="btn btn-outline-light btn-sm" href="./BoardUpdate?Bno=${boardDTO.bno}"><i class="bi bi-pencil-square"></i>&nbsp; 수정</a> 
+			<a onclick="return confirm('정말로 삭제하시겠습니까 ?');" class="btn btn-outline-light btn-sm" href="./BoardDelete?Bno=${boardDTO.bno}"><i class="bi bi-x-square"></i>&nbsp; 삭제</a>
 		</c:if>
 		</div>
 		<div class="title hl">
@@ -61,10 +70,10 @@
 			<span>${boardDTO.memberId} <i class="bi bi-person-fill"></i></span><span class="right">추천 : ${boardDTO.recommend} ㅣ 조회수 : ${boardDTO.hit} ㅣ 작성시간 : ${boardDTO.writingTime} </span>
 		</c:if>
 		</div>
-		
-		<div class="title contents">
-			내용 : ${boardDTO.contents}
+		<div class="warp">
+		<textarea class="title contents" readonly="readonly">${boardDTO.contents}</textarea>
 		</div>
+		
 		<div class="title">
 			<i class="bi bi-chat-dots"></i> 댓글
 		</div>

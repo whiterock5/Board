@@ -37,7 +37,7 @@ public class BoardDAO {
 	}
 	
 	public void BoardDelete(int bno) {
-		sqlSessionTemplate.delete("boardnDelete", bno);
+		sqlSessionTemplate.delete("boardDelete", bno);
 	}
 	public void BoardHit(int bno) {
 		sqlSessionTemplate.update("boardHit" , bno);	

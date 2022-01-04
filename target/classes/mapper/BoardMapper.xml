@@ -16,13 +16,13 @@
 	insert into board
 	(bno, title, contents, writingTime , memberId, hit , recommend)
 	values
-	(Board_SEQ.NEXTVAL , #{title}, #{contents}, (sysdate) , #{memberId} , 0 , 0)
+	(Board_SEQ.NEXTVAL , #{title}, #{contents}, TO_CHAR(SYSDATE, 'YYYY.MM.DD HH24:MI:SS') , #{memberId} , 0 , 0)
 	</insert>
 	
 	<update id="boardUpdate" parameterType="BoardDTO">
 	update board set
- 	title = #{title}, contents = #{contents} , MODIFIEDTIME = (sysdate)
- 	where no = #{bno}
+ 	title = #{title}, contents = #{contents} , MODIFIEDTIME = TO_CHAR(SYSDATE, 'YYYY.MM.DD HH24:MI:SS')
+ 	where bno = #{bno}
 	</update>
 	<update id="boardHit">
 	update board set

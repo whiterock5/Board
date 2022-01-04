@@ -43,7 +43,6 @@
 		<h5 class="title"> 
 			<i class="bi bi-box"></i> 이것저것 게시판  <b class="title-sub">ㅣ  자유게시판 입니다.</b> 
 		</h5>
-		<!-- 유효성 검사 미적용됨. 적용시킬것  -->
 		<form action="./BoardInsert" method="post" class="form">
 			
 			 	<div class="title_insert">

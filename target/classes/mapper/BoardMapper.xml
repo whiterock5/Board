@@ -12,6 +12,25 @@
 	where bno = #{bno}
 	</select>
 	
+	<select id="boardSearch" resultType="BoardDTO" parameterType="BoardSerachDTO">
+	select bno, title, contents, writingTime, memberId, hit, recommend , division from board
+	
+	<if test="searchType == 'title'">
+	where title like '%${searchName}%'
+	</if>
+	<if test="searchType == 'contents'">
+	where contents like '%${searchName}%'
+	</if>
+	<if test="searchType == 'memberId'">
+	where memberId like '%${searchName}%'
+	</if>
+	<if test="searchType == 'titlecontents'">
+	where title like '%${searchName}%' or contents like '%${searchName}%'
+	</if>
+	ORDER BY bno DESC
+	
+	</select>
+	
 	<insert id="boardInsert" parameterType="BoardDTO">
 	insert into board
 	(bno, title, contents, writingTime , memberId, hit , recommend , division)

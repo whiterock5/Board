@@ -6,5 +6,6 @@
 		<!-- DeptDTO 클래스에 대한 별칭을 설정 -->
 		<typeAlias alias="MemberDTO" type="com.wool.board.dto.MemberDTO" />
 		<typeAlias alias="BoardDTO" type="com.wool.board.dto.BoardDTO" />
+		<typeAlias alias="BoardSerachDTO" type="com.wool.board.dto.BoardSerachDTO" />
 	</typeAliases>
 </configuration>

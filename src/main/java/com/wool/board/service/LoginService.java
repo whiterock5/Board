@@ -16,4 +16,7 @@ public class LoginService  {
 		return loginDAO.login(memberDTO);		
 	}
 	
+	public String PermissionCheck(String memberId) {
+		return loginDAO.PermissionCheck(memberId);		
+	}
 }

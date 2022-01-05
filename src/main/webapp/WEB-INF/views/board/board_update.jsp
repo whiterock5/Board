@@ -25,30 +25,29 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-	<header class="header">
-		<nav class="navbar navbar-expand-sm navbar-dark">
-			<div>
-				<a href="./index.jsp" class=" navbar-brand"><i
-					class="bi bi-house-door-fill"></i></a>
+<header class="sticky-top">
+	<nav
+		class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<div>
+			<a href="./MemberSelect" class="navbar-brand">ADMIN</a>
+		</div>
+		<ul class="navbar-nav">
+			<li class="nav-item disabled">
+			<a href="./MemberSelect.go" class="nav-link">회원관리</a></li>
+			<li class="nav-item disabled"><a href="#" class="nav-link">나중에추가</a>
+			</li>
+			<li class="nav-item active"><a href="./NoticeSelect.go" class="nav-link">공지사항</a>
+			</li>
+			<li>
+		</ul>
+		<div class="navbar-collapse collapse dual-collapse2">
+			<div class="navbar-nav ml-auto">
+				<button type="button" class="btn btn-light btn-sm">로그아웃</button>
 			</div>
-			<ul class="navbar-nav">
-				<li class="nav-item"><a href="./BoardSelectAll"
-					class="nav-link active">게시판</a></li>
-				<c:if test="${sessionScope.login == 'admin'}">
-					<li class="nav-item"><a href="./MemeberSelectAll"
-						class="nav-link">유저관리</a></li>
-				</c:if>
-			</ul>
-			<div class="navbar-collapse collapse dual-collapse2">
-				<div class="navbar-nav ml-auto">
-					<div class=" logcheck">
-						접속아이디 : ${sessionScope.login} &nbsp; <a href="./LogOut"
-							class="btn btn-sm btn-outline-light">로그아웃</a>
-					</div>
-				</div>
-			</div>
-		</nav>
-	</header>
+
+		</div>
+	</nav>
+</header>
 <section>
 		<div class="container col-12 board">
 		<h5 class="title"> 

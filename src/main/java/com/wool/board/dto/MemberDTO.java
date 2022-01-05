@@ -18,17 +18,9 @@ public class MemberDTO {
 	private Date signUpDate;
 	//회원나이
 	private int age;
-	//권한
-	private String permission;
 	
 	//[setter getter]------------------------------
 		
-	public String getPermission() {
-		return permission;
-	}
-	public void setPermission(String permission) {
-		this.permission = permission;
-	}
 	public String getMemberId() {
 		return memberId;
 	}
@@ -78,8 +70,7 @@ public class MemberDTO {
 	public String toString() {
 		return "MemberDTO [memberId=" + memberId + ", name=" + name + ", memberPassword=" + memberPassword
 				+ ", phoneNumber=" + phoneNumber +  ", email=" + email
-				+  ", signUpDate=" + signUpDate + ", age=" + age + ", permission="
-				+ permission + "]";
+				+  ", signUpDate=" + signUpDate + ", age=" + age +  "]";
 	}
 	
 	

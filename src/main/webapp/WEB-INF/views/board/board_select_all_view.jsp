@@ -16,25 +16,27 @@
 
 </head>
 <body>
-<header class="sticky-top">
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<header class="header">
+		<nav class="navbar navbar-expand-sm navbar-dark">
 			<div>
-				<a href="./MemberSelect" class=" navbar-brand">ADMIN</a>
+				<a href="./index.jsp" class=" navbar-brand"><i
+					class="bi bi-house-door-fill"></i></a>
 			</div>
 			<ul class="navbar-nav">
-				<li class="nav-item"><a href="./MemberSelect.go"
-					class="nav-link">회원관리</a></li>
-				<li class="nav-item disabled"><a href="#" class="nav-link">나중에추가</a>
-				</li>
-				<li class="nav-item active"><a href="./NoticeSelect" class="nav-link">공지사항</a>
-				</li>
-				<li>
+				<li class="nav-item"><a href="./BoardSelectAll"
+					class="nav-link active">게시판</a></li>
+				<c:if test="${sessionScope.login == 'admin'}">
+					<li class="nav-item"><a href="./MemberSelectAll"
+						class="nav-link">유저관리</a></li>
+				</c:if>
 			</ul>
 			<div class="navbar-collapse collapse dual-collapse2">
 				<div class="navbar-nav ml-auto">
-					<button type="button" class="btn btn-light btn-sm">로그아웃</button>
+					<div class=" logcheck">
+						접속아이디 : ${sessionScope.login} &nbsp; <a href="./LogOut"
+							class="btn btn-sm btn-outline-light">로그아웃</a>
+					</div>
 				</div>
-
 			</div>
 		</nav>
 	</header>
@@ -43,12 +45,6 @@
 		<h5 class="title"> 
 			<i class="bi bi-box"></i> 이것저것 게시판  <b class="title-sub">ㅣ 컨텐츠 수: <b>${fn:length(list)}</b>ㅣ  자유게시판 입니다.</b> 
 		</h5>
-		<nav class="nav-tab">
-			<a href="">전체</a>
-			<a href="">잡담</a>
-			<a href="">정보</a>
-			<a href="">공지</a>
-		</nav>
 		
 		<table class="board-table">
 				<tr class="board-top">
@@ -76,20 +72,23 @@
 				</c:forEach>
 
 			</table>
-			<form class="searchForm">
-				<select name="searchType" id="searchType">
-					<option value="제목">제목</option>
-					<option value="내용">내용</option>
-					<option value="글쓴이">작성자</option>
-				</select>
-				
-				<input type="text" id="searchName">
-				<input type="submit" class="btn btn-outline-light btn-sm" value="검색">
-			</form>
-			<div>
-				<a href="./BoardInsert" class="btn btn-outline-light btn-sm">
+			<div class="margin_top20 right">
+				<a href="./BoardInsert" class="btn btn-outline-light btn-sm ">
 					<i class="bi bi-pencil-square"></i> 글쓰기</a>
 			</div>
+			
+			<form class="margin_top20" action="./BoardSearch" method="get">
+				<select name="searchType" id="searchType" class="search">
+					<option value="titlecontents">제목+내용</option>
+					<option value="title">제목</option>
+					<option value="contents">내용</option>
+					<option value="memberId">작성자</option>
+				</select>
+				
+				<input type="text" id="searchName" name="searchName" class="search">
+				<input type="submit" class="btn btn-outline-light btn-sm" value="검색">
+			</form>
+			
 		</div>
 	</section>
 	<footer> </footer>

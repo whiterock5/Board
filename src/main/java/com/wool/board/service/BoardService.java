@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.wool.board.dao.BoardDAO;
 import com.wool.board.dto.BoardDTO;
+import com.wool.board.dto.BoardSearchDTO;
 
 @Service
 public class BoardService {
@@ -24,6 +25,10 @@ public class BoardService {
 	public BoardDTO BoardSelect(int bno) {
 		boardDAO.BoardHit(bno);
 		return boardDAO.BoardSelect(bno);		
+	}
+	
+	public List<BoardDTO> BoardSearch(BoardSearchDTO boardSearchDTO) {
+		return boardDAO.BoardSearch(boardSearchDTO);		
 	}
 	
 	public void BoardInsert(BoardDTO boardDTO) {

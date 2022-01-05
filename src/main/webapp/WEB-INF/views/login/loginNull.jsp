@@ -9,7 +9,7 @@
 </head>
 <body>
 <script type="text/javascript">
-alert("아이디 혹은 비밀번호가 틀렸습니다." );
+alert("로그인이 필요합니다." );
 location.href="./Login"
 </script>
 </body>

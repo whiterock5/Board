@@ -5,6 +5,7 @@
 	<typeAliases>
 		<!-- DeptDTO 클래스에 대한 별칭을 설정 -->
 		<typeAlias alias="MemberDTO" type="com.wool.board.dto.MemberDTO" />
+		<typeAlias type="com.wool.board.dto.BoardSearchDTO" alias="BoardSearchDTO"/>
 		<typeAlias alias="BoardDTO" type="com.wool.board.dto.BoardDTO" />
 	</typeAliases>
 </configuration>

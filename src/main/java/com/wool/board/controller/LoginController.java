@@ -50,46 +50,22 @@ public class LoginController {
 		if (result == 1) {
 			session.setAttribute("login", memberDTO.getMemberId());
 			
-			returnURL = "../../index";
+			returnURL = "redirect:./index.jsp";
 		} else {
-			returnURL = "./login/login";
+			returnURL = "./login/loginFail";
 		}
 		return returnURL;
 	}
 
-	@RequestMapping(value = "/IdCheck", method = RequestMethod.GET)
-	public String LoginCheck(HttpServletRequest request) {
-
-		session = request.getSession();
-		String memberId = (String) session.getAttribute("memberId");
-		String result = "";
-
-		result = loginService.PermissionCheck(memberId);
-		session.setAttribute("permission", result);
-
-		returnURL = "";
-
-		if (result.equals("admin")) { // 유저,관리자페이지 선택가능하게
-
-			returnURL = "./admin/admin_main";
-
-		} else if (result.equals("user")) { // 유저페이지?
-
-			returnURL = "./user/user_page_test";
-		} else { // 정지계정?
-
-			returnURL = "./user/user_alert";
-		}
-
-		return returnURL;
+	@RequestMapping(value = "/LoginNull", method = RequestMethod.GET)
+	public String LoginNull() {
+		return "./login/loginNull";
 	}
 
 	@RequestMapping(value = "/LogOut", method = RequestMethod.GET)
 	public String Logout() {
-
 		session.invalidate();
-
-		return "../../index";
+		return "redirect:./index.jsp";
 	}
 
 }

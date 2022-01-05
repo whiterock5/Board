@@ -2,62 +2,38 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.wool.board">
-	<select id="boardSelectAll" resultType="BoardDTO">
-	select bno, title, contents, writingTime, memberId, hit, recommend , division from board
-	ORDER BY bno DESC
-	</select>
-	
-	<select id="boardSelect" resultType="BoardDTO" parameterType="BoardDTO">
-	select bno, title, contents, writingTime , modifiedTime, memberId , hit , recommend from board
-	where bno = #{bno}
-	</select>
-	
-	<insert id="boardInsert" parameterType="BoardDTO">
-	insert into board
-	(bno, title, contents, writingTime , memberId, hit , recommend , division)
-	values
-	(Board_SEQ.NEXTVAL , #{title}, #{contents}, TO_CHAR(SYSDATE, 'YYYY.MM.DD HH24:MI:SS') , #{memberId} , 0 , 0 , #{division})
-	</insert>
-	
-	<update id="boardUpdate" parameterType="BoardDTO">
-	update board set
- 	title = #{title}, contents = #{contents} , MODIFIEDTIME = TO_CHAR(SYSDATE, 'YYYY.MM.DD HH24:MI:SS') , division = #{division}
- 	where bno = #{bno}
-	</update>
-	
-	<update id="boardHit">
-	update board set
-	hit = hit+1
-	where bno = #{bno}
-	</update>
-	
-	<delete id="boardDelete" parameterType="int">
-	delete from board where bno = #{bno}
-	</delete>
-	
-	<select id="replySelect" resultType="BoardDTO" parameterType="BoardDTO">
-	select rno, rcontents, rwritingTime , memberId from reply
-	where bno = #{bno}
-	ORDER BY rno DESC
-	</select>
-	
-	
-	<select id="replyCheck" resultType="int">
-	select COUNT(*) from reply
-	where bno = #{bno}
-	</select>
-	
-	<insert id="replyInsert" parameterType="BoardDTO">
-	insert into reply
-	(tno, rno, bno, memberId, rwritingTime , rcontents)
-	values
-	(reply_seq.NEXTVAL , #{rno} , #{bno}, #{memberId}, TO_CHAR(SYSDATE, 'YYYY.MM.DD HH24:MI:SS') , #{rcontents})
-	</insert>
-	
-	<delete id="replyDelete" parameterType="BoardDTO">
-	delete from reply where rno = #{rno} and bno = #{bno}
-	</delete>
-	
-	
-	
+
+<select resultType="BoardDTO" id="boardSelectAll">select bno, title, contents, writingTime, memberId, hit, recommend , division from board ORDER BY bno DESC </select>
+
+<select resultType="BoardDTO" id="boardSelect" parameterType="BoardDTO">select bno, title, contents, writingTime , modifiedTime, memberId , hit , recommend from board where bno = #{bno} </select>
+
+
+<select resultType="BoardDTO" id="boardSearch" parameterType="BoardSearchDTO">
+select bno, title, contents, writingTime, memberId, hit, recommend , division from board 
+<if test="searchType == 'title'">where title like '%${searchName}%' </if>
+
+<if test="searchType == 'contents'">where contents like '%${searchName}%' </if>
+
+<if test="searchType == 'memberId'">where memberId like '%${searchName}%' </if>
+
+<if test="searchType == 'titlecontents'">where title like '%${searchName}%' or contents like '%${searchName}%' </if>
+ORDER BY bno DESC 
+</select>
+
+<insert id="boardInsert" parameterType="BoardDTO">insert into board(bno, title, contents, writingTime , memberId, hit , recommend , division)values(Board_SEQ.NEXTVAL , #{title}, #{contents}, TO_CHAR(SYSDATE, 'YYYY.MM.DD HH24:MI:SS') , #{memberId} , 0 , 0 , #{division}) </insert>
+
+<update id="boardUpdate" parameterType="BoardDTO">update board set title = #{title}, contents = #{contents} , MODIFIEDTIME = TO_CHAR(SYSDATE, 'YYYY.MM.DD HH24:MI:SS') , division = #{division} where bno = #{bno} </update>
+
+<update id="boardHit">update board set hit = hit+1where bno = #{bno} </update>
+
+<delete id="boardDelete" parameterType="int">delete from board where bno = #{bno} </delete>
+
+<select resultType="BoardDTO" id="replySelect" parameterType="BoardDTO">select rno, rcontents, rwritingTime , memberId from reply where bno = #{bno} ORDER BY rno DESC </select>
+
+<select resultType="int" id="replyCheck">select COUNT(*) from reply where bno = #{bno} </select>
+
+<insert id="replyInsert" parameterType="BoardDTO">insert into reply(tno, rno, bno, memberId, rwritingTime , rcontents)values(reply_seq.NEXTVAL , #{rno} , #{bno}, #{memberId}, TO_CHAR(SYSDATE, 'YYYY.MM.DD HH24:MI:SS') , #{rcontents}) </insert>
+
+<delete id="replyDelete" parameterType="BoardDTO">delete from reply where rno = #{rno} and bno = #{bno} </delete>
+
 </mapper>

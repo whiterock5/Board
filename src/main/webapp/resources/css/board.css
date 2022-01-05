@@ -16,6 +16,7 @@ label {
 	background-color: #222;
 	padding: 15px;
 	border: 1px solid #bbb;
+	border-top : 0;
 	background-color: #222; 
 }
 .title { 
@@ -156,6 +157,16 @@ label {
 	font-size: 12px;
 	background-color: #333;
 	border-radius: 5px;
-	padding: 2px;
-	
+	padding: 2px;	
 }
+
+.margin_top20{
+	margin-top: 20px;
+}
+
+.search{
+	height: 31px;
+	font-size: 14px;
+}
+
+.insert { margin-top: 20px;}

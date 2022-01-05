@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.wool.board.dto.BoardDTO;
+import com.wool.board.dto.BoardSearchDTO;
 
 @Repository
 
@@ -26,6 +27,11 @@ public class BoardDAO {
 		
 		return sqlSessionTemplate.selectOne("boardSelect", bno);	
 	}
+	
+	public List<BoardDTO> BoardSearch(BoardSearchDTO boardSearchDTO) {
+		return sqlSessionTemplate.selectList("boardSearch", boardSearchDTO);	
+	}
+	
 	
 	public List<BoardDTO> ReplySelect(int bno) {
 		return sqlSessionTemplate.selectList("replySelect" , bno);	

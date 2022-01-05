@@ -19,14 +19,11 @@ public class MemberService {
 	}
 	
 	public MemberDTO memberSelect(MemberDTO memberDTO) {
-		String permission = memberDAO.PermissionCheck(memberDTO.getMemberId());
 		MemberDTO result = memberDAO.MemberSelect(memberDTO);
-		result.setPermission(permission);
 		return result;		
 	}
 	
 	public void memberInsert(MemberDTO memberDTO) { 	
-		memberDTO.setPermission("user");
 		memberDAO.MemberInsert(memberDTO);
 	}
 	

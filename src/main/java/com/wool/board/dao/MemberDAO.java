@@ -24,18 +24,23 @@ public class MemberDAO {
 	public MemberDTO MemberSelect(MemberDTO memberDTO) {
 		return sqlSessionTemplate.selectOne("memberSelect", memberDTO.getMemberId());
 	}
-
+	public String PermissionCheck(String memberId) {
+		return sqlSessionTemplate.selectOne("permissionCheck", memberId);
+	}
 	
 	@Transactional
 	public void MemberInsert(MemberDTO memberDTO) {
-		sqlSessionTemplate.insert("memberInsert" , memberDTO);		
+		sqlSessionTemplate.insert("memberInsert" , memberDTO);	
+		sqlSessionTemplate.insert("permissionInsert" , memberDTO);	
 	}
 	
 	public void MemberUpdate(MemberDTO memberDTO) {
 		sqlSessionTemplate.update("memberUpdate" , memberDTO);	
+		sqlSessionTemplate.update("permissionUpdate" , memberDTO);	
 	}
 	
 	public void MemberDelete(String memberId) {
+		sqlSessionTemplate.delete("permissionDelete", memberId);
 		sqlSessionTemplate.delete("memberDelete", memberId);
 	}
 	

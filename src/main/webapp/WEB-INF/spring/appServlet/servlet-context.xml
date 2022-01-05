@@ -33,14 +33,8 @@
 
 	<interceptors>
 		<interceptor>
-			<mapping path="/BoardSelectAll" />
-			<mapping path="/BoardSelect" />
-			<mapping path="/BoardInsert" />
-			<mapping path="/BoardUpdate" />
-			<mapping path="/MemberSelectAll" />
-			<mapping path="/MemeberSelect" />
-			<mapping path="/MemberInsert" />
-			<mapping path="/MemberUpdate" />
+			<mapping path="/member/*" />
+			<!-- <mapping path="/board/*" /> -->
 			<beans:bean id="AuthLoginInterceptor" class="com.wool.board.interceptor.AuthLoginInterceptor" />
 		</interceptor>
 	</interceptors> 

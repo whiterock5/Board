@@ -21,12 +21,9 @@
 			<a href="./MemberSelectAll" class="navbar-brand">ADMIN</a>
 		</div>
 		<ul class="navbar-nav">
-			<li class="nav-item active">
-			<a href="./MemberSelectAll" class="nav-link">회원관리</a></li>
-			<li class="nav-item disabled"><a href="#" class="nav-link">나중에추가</a>
-			</li>
-			<li class="nav-item disabled"><a href="#" class="nav-link">지금은없음</a>
-			</li>
+			<li class="nav-item">
+			<a href="./BoardSelectALl" class="nav-link">게시판</a></li>
+			<li class="nav-item active"><a href="#" class="nav-link">회원관리</a>
 			<li>
 		</ul>
 		<div class="navbar-collapse collapse dual-collapse2">

@@ -19,25 +19,27 @@
 <script src="./js/jquery.validate.min.js" type="text/javascript"></script>
 </head>
 <body>
-	<header class="sticky-top">
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		<header class="header">
+		<nav class="navbar navbar-expand-sm navbar-dark">
 			<div>
-				<a href="./MemberSelect.go" class="navbar-brand">ADMIN</a>
+				<a href="./index.jsp" class=" navbar-brand"><i
+					class="bi bi-house-door-fill"></i></a>
 			</div>
 			<ul class="navbar-nav">
-				<li class="nav-item disabled"><a href="./MemberSelect.go"
-					class="nav-link">회원관리</a></li>
-				<li class="nav-item disabled"><a href="#" class="nav-link">나중에추가</a>
-				</li>
-				<li class="nav-item active"><a href="#" class="nav-link">공지사항</a>
-				</li>
-				<li>
+				<li class="nav-item"><a href="./BoardSelectAll"
+					class="nav-link active">게시판</a></li>
+				<c:if test="${sessionScope.login == 'admin'}">
+					<li class="nav-item"><a href="./MemeberSelectAll"
+						class="nav-link">유저관리</a></li>
+				</c:if>
 			</ul>
 			<div class="navbar-collapse collapse dual-collapse2">
 				<div class="navbar-nav ml-auto">
-					<button type="button" class="btn btn-light btn-sm">로그아웃</button>
+					<div class=" logcheck">
+						접속아이디 : ${sessionScope.login} &nbsp; <a href="./LogOut"
+							class="btn btn-sm btn-outline-light">로그아웃</a>
+					</div>
 				</div>
-
 			</div>
 		</nav>
 	</header>

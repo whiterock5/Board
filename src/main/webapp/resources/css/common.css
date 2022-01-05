@@ -7,7 +7,8 @@ section { display:block; width:970px; min-height: 100%; margin:0 auto; padding-b
 footer { position: relative; 
 width: 100%; 
 height: 100px; 
-background-color : #343A40;  
+background-color : #222;  
+border-top: 1px solid #bbb;
 transform: translateY(-100%);
  }
 
@@ -28,4 +29,15 @@ transform: translateY(-100%);
 	height: 500px;
 	resize: none;
 	
+}
+
+.header{
+	background-color: #222;
+	border-bottom: 1px solid #bbb;
+}
+
+.logcheck{
+	color : #bbb;
+	font-size: 12px;
+	text-align:center;
 }

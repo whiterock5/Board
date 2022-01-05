@@ -16,8 +16,4 @@ public class LoginDAO {
 	public int login(MemberDTO memberDTO) {
 		return sqlSessionTemplate.selectOne("Login", memberDTO);
 	}
-	
-	public String PermissionCheck(String memberId) {
-		return sqlSessionTemplate.selectOne("PermissionCheck", memberId);
-	}
 }

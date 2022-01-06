@@ -3,13 +3,13 @@
 
 <mapper namespace="com.wool.board">
 
-<select resultType="BoardDTO" id="boardSelectAll">select bno, title, contents, writingTime, memberId, hit, recommend , division from board ORDER BY bno DESC </select>
+<select resultType="BoardDTO" id="boardSelectAll">select bno, title, contents, writingTime, memberId, hit, division from board ORDER BY bno DESC </select>
 
-<select resultType="BoardDTO" id="boardSelect" parameterType="BoardDTO">select bno, title, contents, writingTime , modifiedTime, memberId , hit , recommend from board where bno = #{bno} </select>
+<select resultType="BoardDTO" id="boardSelect" parameterType="BoardDTO">select bno, title, contents, writingTime , modifiedTime, memberId , hit  from board where bno = #{bno} </select>
 
 
 <select resultType="BoardDTO" id="boardSearch" parameterType="BoardSearchDTO">
-select bno, title, contents, writingTime, memberId, hit, recommend , division from board 
+select bno, title, contents, writingTime, memberId, hit , division from board 
 <if test="searchType == 'title'">where title like '%${searchName}%' </if>
 
 <if test="searchType == 'contents'">where contents like '%${searchName}%' </if>
@@ -20,7 +20,7 @@ select bno, title, contents, writingTime, memberId, hit, recommend , division fr
 ORDER BY bno DESC 
 </select>
 
-<insert id="boardInsert" parameterType="BoardDTO">insert into board(bno, title, contents, writingTime , memberId, hit , recommend , division)values(Board_SEQ.NEXTVAL , #{title}, #{contents}, TO_CHAR(SYSDATE, 'YYYY.MM.DD HH24:MI:SS') , #{memberId} , 0 , 0 , #{division}) </insert>
+<insert id="boardInsert" parameterType="BoardDTO">insert into board(bno, title, contents, writingTime , memberId, hit , division)values(Board_SEQ.NEXTVAL , #{title}, #{contents}, TO_CHAR(SYSDATE, 'YYYY.MM.DD HH24:MI:SS') , #{memberId} , 0 , #{division}) </insert>
 
 <update id="boardUpdate" parameterType="BoardDTO">update board set title = #{title}, contents = #{contents} , MODIFIEDTIME = TO_CHAR(SYSDATE, 'YYYY.MM.DD HH24:MI:SS') , division = #{division} where bno = #{bno} </update>
 

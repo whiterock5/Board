@@ -13,8 +13,8 @@
 </head>
 <body>
 <script type="text/javascript">
-alert("해당 댓글을 삭제 하였습니다.")
-location.href="./BoardSelect?bno=${boardDTO.bno}"
+alert("해당 글을 삭제 하였습니다.")
+location.href="./BoardSelectAll"
 </script>
 </body>
 </html>

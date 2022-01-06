@@ -66,10 +66,10 @@ $(document).ready(function() {
 		</div>
 		<div class="title boardid">
 		<c:if test="${boardDTO.modifiedTime ne null }">
-			<span>${boardDTO.memberId} <i class="bi bi-person-fill"></i></span><span class="right">추천 : ${boardDTO.recommend} ㅣ 조회수 : ${boardDTO.hit} ㅣ 작성시간 : ${boardDTO.writingTime} ㅣ 수정시간 : ${boardDTO.modifiedTime}</span>
+			<span>${boardDTO.memberId} <i class="bi bi-person-fill"></i></span><span class="right">  조회수 : ${boardDTO.hit} ㅣ 작성시간 : ${boardDTO.writingTime} ㅣ 수정시간 : ${boardDTO.modifiedTime}</span>
 		</c:if>
 		<c:if test="${boardDTO.modifiedTime eq null }">
-			<span>${boardDTO.memberId} <i class="bi bi-person-fill"></i></span><span class="right">추천 : ${boardDTO.recommend} ㅣ 조회수 : ${boardDTO.hit} ㅣ 작성시간 : ${boardDTO.writingTime} </span>
+			<span>${boardDTO.memberId} <i class="bi bi-person-fill"></i></span><span class="right">  조회수 : ${boardDTO.hit} ㅣ 작성시간 : ${boardDTO.writingTime} </span>
 		</c:if>
 		</div>
 		<div class="warp">
@@ -101,11 +101,7 @@ $(document).ready(function() {
 				<input type="hidden" value="${sessionScope.login}" id="memberId" name="memberId">
 			</form>
 		</div>
-		
-		
-		
-		
-		
+
 	</div>
 	</section>
 	<footer> </footer>

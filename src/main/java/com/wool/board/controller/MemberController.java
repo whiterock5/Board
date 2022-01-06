@@ -67,5 +67,14 @@ public class MemberController {
 			return "./member/member_delete_view";
 		}
 		
-
+		@RequestMapping(value = "/SignUp", method = RequestMethod.GET)
+		public String SignUp() {
+			return "./login/signup";
+		}
+		@RequestMapping(value = "/SignUp", method = RequestMethod.POST)
+		public String SignUp(Model model, MemberDTO memberDTO) {
+			model.addAttribute("list", memberService.memberListAll());
+			memberService.memberInsert(memberDTO);
+			return "./login/signup_success";
+		}
 }

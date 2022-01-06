@@ -1,15 +1,16 @@
+<%@page import="com.wool.board.dto.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인확인</title>
 </head>
 <body>
 <script type="text/javascript">
-alert('사용 불가능한 계정입니다.');
-location.href="./Login";
+alert("권한이 없습니다." );
+location.href="./index.jsp"
 </script>
 </body>
 </html>

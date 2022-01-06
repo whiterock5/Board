@@ -23,8 +23,6 @@ public class BoardDTO {
 	private String memberId;
 	//조회수
 	private int hit;
-	//추천수
-	private int recommend;
 	//분류
 	private String division;
 	

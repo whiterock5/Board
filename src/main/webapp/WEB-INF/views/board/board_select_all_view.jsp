@@ -53,7 +53,6 @@
 					<th>작성자</th>
 					<th>글작성시간</th>
 					<th>조회수</th>
-					<th>추천</th>
 				</tr>
 
 				<c:forEach var="list" items="${list}">
@@ -65,9 +64,7 @@
 						<td><b class="division">${list.division}</b> ${list.getTitle()}</td>
 						<td>${list.getMemberId()}</td>
 						<td>${list.getWritingTime()}</td>
-						<td>${list.getHit()}</td>
-						<td>${list.getRecommend()}</td>
-					
+						<td>${list.getHit()}</td>					
 					</tr>
 				</c:forEach>
 

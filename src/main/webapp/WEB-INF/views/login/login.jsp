@@ -35,7 +35,7 @@
 		</form>
 		<div class="SideMenu">
 			<div class="login_sub">
-				<!-- 아이디가 없으신가요? <a href="./signup.html" class="blue"> 회원가입하기 </a> -->
+				<a href="./SignUp" class="blue"> 회원가입하기 </a>
 			</div>
 
 		</div>

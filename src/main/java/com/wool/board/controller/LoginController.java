@@ -67,5 +67,10 @@ public class LoginController {
 		session.invalidate();
 		return "redirect:./index.jsp";
 	}
-
+	
+	@RequestMapping(value = "/Permission", method = RequestMethod.GET)
+	public String Permission() {
+		return "./login/permission";
+	}
+	
 }

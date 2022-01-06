@@ -2,15 +2,24 @@
 
 .list {
 	height: 40px;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #e2e2e2;
+	color : #e2e2e2;
 }
+.list td{
+	color : #e2e2e2;
+}
+
 .text-left { text-align: left; }
 .text-right { text-align: right; }
 
 .blank { height: 20px; }
 
 .bottom_line{
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid #e2e2e2;
 	margin-bottom: 40px;
+}
+
+.btn {
+	width: 45%;
 }
 

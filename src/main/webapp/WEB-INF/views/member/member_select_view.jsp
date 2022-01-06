@@ -8,29 +8,30 @@
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 <link rel="stylesheet" type="text/css" href="./css/list.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 <script src="./js/jquery-3.5.1.min.js" type="text/javascript"></script>
 <script src="./js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
-	<header class="sticky-top">
-		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	<header class="header">
+		<nav class="navbar navbar-expand-sm navbar-dark">
 			<div>
-				<a href="./MemberSelectAll" class="navbar-brand">ADMIN</a>
+				<a href="./index.jsp" class=" navbar-brand"><i
+					class="bi bi-house-door-fill"></i></a>
 			</div>
 			<ul class="navbar-nav">
-				<li class="nav-item active"><a href="./MemberSelectAll"
-					class="nav-link">회원관리</a></li>
-				<li class="nav-item disabled"><a href="#" class="nav-link">나중에추가</a>
-				</li>
-				<li class="nav-item disabled"><a href="#" class="nav-link">지금은없음</a>
-				</li>
-				<li>
+				<li class="nav-item"><a href="./BoardSelectAll"
+					class="nav-link">게시판</a></li>
+					<li class="nav-item"><a href="./MemberSelectAll"
+						class="nav-link active">유저관리</a></li>
 			</ul>
 			<div class="navbar-collapse collapse dual-collapse2">
 				<div class="navbar-nav ml-auto">
-					<a href="./LogOut" class="btn btn-light btn-sm">로그아웃</a>>
+					<div class=" logcheck">
+						접속아이디 : ${sessionScope.login} &nbsp; <a href="./LogOut"
+							class="btn btn-sm btn-outline-light">로그아웃</a>
+					</div>
 				</div>
-
 			</div>
 		</nav>
 	</header>
@@ -75,12 +76,6 @@
 				</tr>
 				<tr class="blank"></tr>
 				<tr class="list">
-					<th class="text-left">권한</th>
-					<td class="text-right">${memberDTO.permission}
-					</td>
-				</tr>
-				<tr class="blank"></tr>
-				<tr class="list">
 					<th class="text-left">가입일자</th>
 					<td class="text-right">${memberDTO.signUpDate}
 					</td>
@@ -89,9 +84,9 @@
 			</table>
 			<div class="bottom_btn">
 				 <a href="./MemberUpdate?memberId=${memberDTO.memberId}"
-					class="btn btn-primary left"> 수정 </a> 
+					class="btn btn-sm btn-outline-light left"><i class="bi bi-pencil-square"></i>&nbsp; 수정 </a> 
 					<a onclick="return confirm('정말로 삭제하시겠습니까 ?');" href="./MemberDelete?memberId=${memberDTO.memberId}"
-					class="btn btn-danger right"> 삭제 </a>
+					class="btn btn-sm btn-outline-light right"><i class="bi bi-x-square"></i>&nbsp; 삭제 </a>
 			</div>
 		</div>
 	</section>

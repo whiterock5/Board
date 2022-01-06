@@ -46,6 +46,15 @@
 				class="com.wool.board.interceptor.AuthLoginInterceptor"
 				id="AuthLoginInterceptor" />
 		</interceptor>
+		<interceptor>
+			<mapping path="/MemberSelectAll" />
+			<mapping path="/MemeberSelect" />
+			<mapping path="/MemberInsert" />
+			<mapping path="/MemberUpdate" />
+			<beans:bean
+				class="com.wool.board.interceptor.AdminInterceptor"
+				id="AdminInterceptor" />
+		</interceptor>
 	</interceptors>
 
 </beans:beans>

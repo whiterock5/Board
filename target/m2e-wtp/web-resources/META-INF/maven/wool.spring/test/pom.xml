@@ -72,7 +72,7 @@
 			<version>3.2.4</version>
 		</dependency>
 
-		<!-- 롬복 라이브러리 setter getter toString 자동생성 -->
+		<!-- 롬복 라이브러리 setter getter toString -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -217,3 +217,4 @@
 		</plugins>
 	</build>
 </project>
+	

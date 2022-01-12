@@ -56,7 +56,7 @@ $(document).ready(function() {
 			<i class="bi bi-box"></i> 이것저것 게시판  <b class="title-sub">ㅣ  자유게시판 입니다.</b> 
 		</h5>
 		<div>
-		<c:if test="${boardDTO.memberId eq sessionScope.login}">
+		<c:if test="${boardDTO.memberId eq sessionScope.login or 'admin' eq sessionScope.login}">
 			<a class="btn btn-outline-light btn-sm" href="./BoardUpdate?Bno=${boardDTO.bno}"><i class="bi bi-pencil-square"></i>&nbsp; 수정</a> 
 			<a onclick="return confirm('정말로 글을 삭제하시겠습니까 ?');" class="btn btn-outline-light btn-sm" href="./BoardDelete?Bno=${boardDTO.bno}"><i class="bi bi-x-square"></i>&nbsp; 삭제</a>
 		</c:if>

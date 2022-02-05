@@ -26,7 +26,7 @@
 	<c:if test="${login =='admin'}">
 	<a href="./MemberSelectAll" class="btn btn-outline-light">회원관리</a> <br />
 	</c:if>
-	<a href="./BoardSelectAll" class="btn btn-outline-light">게시판가기</a> <br />
+	<a href="./BoardList" class="btn btn-outline-light">게시판가기</a> <br />
 	<a href="./LogOut" class="btn btn-outline-light">로그아웃</a>
 </c:if>
 </div>

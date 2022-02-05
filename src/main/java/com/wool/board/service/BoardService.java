@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.wool.board.dao.BoardDAO;
 import com.wool.board.dto.BoardDTO;
-import com.wool.board.dto.BoardSearchDTO;
 
 @Service
 public class BoardService {
@@ -18,18 +17,22 @@ public class BoardService {
 	
 	HttpSession session;
 	
+	//전체 게시글
 	public List<BoardDTO> BoardListAll() {
 		return boardDAO.BoardSelectAll();
 	}
 	
+	//게시글 상세보기
 	public BoardDTO BoardSelect(int bno) {
 		boardDAO.BoardHit(bno);
 		return boardDAO.BoardSelect(bno);		
 	}
 	
-	public List<BoardDTO> BoardSearch(BoardSearchDTO boardSearchDTO) {
-		return boardDAO.BoardSearch(boardSearchDTO);		
+	//게시글 검색
+	public List<BoardDTO> BoardSearch(BoardDTO boardDTO) {
+		return boardDAO.BoardSearch(boardDTO);		
 	}
+	
 	
 	public void BoardInsert(BoardDTO boardDTO) {
 		boardDAO.BoardInsert(boardDTO);

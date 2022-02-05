@@ -22,6 +22,7 @@ $(document).ready(function() {
 	  });
 	  $('textarea').keyup();
 	});
+
 </script>
 </head>
 <body>
@@ -96,7 +97,7 @@ $(document).ready(function() {
 		<div>
 			댓글 작성
 			<form action="./ReplyInsert" method="post">
-				<textarea id="rcontents" name="rcontents"></textarea><input type="submit" value="작성">
+				<textarea id="rcontents" name="rcontents"></textarea><input type="submit" id="btnReplySave" name="btnReplySave" value="작성">
 				<input type="hidden" value="${boardDTO.bno}" id="bno" name="bno">
 				<input type="hidden" value="${sessionScope.login}" id="memberId" name="memberId">
 			</form>

@@ -26,6 +26,13 @@ public class BoardDTO {
 	//분류
 	private String division;
 	
+	//검색 ----------
+	// BoardSerachDTO에서 통합 
+	// 검색 타입
+	private String searchType;
+	// 검색내용
+	private String searchName;
+	
 	//-------------
 	
 	//댓글번호

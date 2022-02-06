@@ -35,11 +35,5 @@ public class BoardDTO {
 	
 	//-------------
 	
-	//댓글번호
-	private int rno;
-	//댓글내용
-	private String rcontents;
-	//댓글 작성 시간
-	private String rwritingTime;
-	
+
 }

@@ -32,7 +32,7 @@ $(document).ready(function() {
 					class="bi bi-house-door-fill"></i></a>
 			</div>
 			<ul class="navbar-nav">
-				<li class="nav-item"><a href="./BoardSelectAll"
+				<li class="nav-item"><a href="./BoardList"
 					class="nav-link active">게시판</a></li>
 				<c:if test="${sessionScope.login == 'admin'}">
 					<li class="nav-item"><a href="./MemberSelectAll"

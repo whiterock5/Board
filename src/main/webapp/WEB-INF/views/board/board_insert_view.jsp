@@ -8,7 +8,7 @@
 </head>
 <body>
 <script type="text/javascript">
-location.href="./BoardSelectAll"
+location.href="./BoardList"
 </script>
 
 </body>

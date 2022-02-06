@@ -1,8 +1,6 @@
 package com.wool.board.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -11,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -55,8 +52,6 @@ public class BoardController {
 	public String BoardSelect(Model model, BoardDTO boardDTO) {
 
 		model.addAttribute("boardDTO", boardService.BoardSelect(boardDTO.getBno()));
-		List<BoardDTO> reply = boardService.ReplySelect(boardDTO.getBno());
-		model.addAttribute("reply", reply);
 
 		return "./board/board_select_view";
 	}
@@ -93,20 +88,6 @@ public class BoardController {
 		return "./board/board_delete_view";
 	}
 
-	@RequestMapping(value = "/ReplyInsert", method = RequestMethod.POST)
-	public String ReplyInsert(BoardDTO boardDTO) {
-		int rno = boardService.ReplyCheck(boardDTO) + 1;
-		boardDTO.setRno(rno);
-		boardService.ReplyInsert(boardDTO);
-		return "./board/reply_view";
-	}
 
-	@RequestMapping(value = "/ReplyRemove", method = RequestMethod.GET)
-	public String ReplyDelete(BoardDTO boardDTO, @RequestParam(value = "rno") int rno, @RequestParam(value = "bno") int bno) {
-		boardDTO.setBno(bno);
-		boardDTO.setRno(rno);
-		boardService.ReplyDelete(boardDTO);
-		return "./board/board_delete_view";
-	}
 
 }

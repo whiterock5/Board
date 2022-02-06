@@ -21,18 +21,15 @@ public class BoardService {
 	public List<BoardDTO> BoardListAll() {
 		return boardDAO.BoardSelectAll();
 	}
-	
 	//게시글 상세보기
 	public BoardDTO BoardSelect(int bno) {
 		boardDAO.BoardHit(bno);
 		return boardDAO.BoardSelect(bno);		
 	}
-	
 	//게시글 검색
 	public List<BoardDTO> BoardSearch(BoardDTO boardDTO) {
 		return boardDAO.BoardSearch(boardDTO);		
 	}
-	
 	
 	public void BoardInsert(BoardDTO boardDTO) {
 		boardDAO.BoardInsert(boardDTO);
@@ -46,19 +43,4 @@ public class BoardService {
 		boardDAO.BoardDelete(bno);
 	}
 	
-	public List<BoardDTO> ReplySelect(int bno) {
-		return boardDAO.ReplySelect(bno);
-	}
-	
-	public void ReplyInsert(BoardDTO boardDTO) {
-		boardDAO.ReplyInsert(boardDTO);
-	}
-	
-	public int ReplyCheck(BoardDTO boardDTO) {
-		return boardDAO.ReplyCheck(boardDTO);
-	}
-	
-	public void ReplyDelete(BoardDTO boardDTO) {
-		boardDAO.ReplyDelete(boardDTO);
-	}
 }

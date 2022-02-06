@@ -14,7 +14,7 @@
 <body>
 <script type="text/javascript">
 alert("해당 글을 삭제 하였습니다.")
-location.href="./BoardSelectAll"
+location.href="./BoardList"
 </script>
 </body>
 </html>

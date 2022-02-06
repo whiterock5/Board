@@ -49,27 +49,7 @@ hit = hit+1where bno = #{bno}
 
 <delete id="boardDelete" parameterType="int">
 delete from board 
-where bno = #{bno} 
-</delete>
-
-<select resultType="BoardDTO" id="replySelect" parameterType="BoardDTO">
-select rno, rcontents, rwritingTime , memberId from reply 
-where bno = #{bno} ORDER BY rno DESC 
-</select>
-
-<select resultType="int" id="replyCheck">
-select COUNT(*) from reply 
-where bno = #{bno} 
-</select>
-
-<insert id="replyInsert" parameterType="BoardDTO">
-insert into reply(tno, rno, bno, memberId, rwritingTime , rcontents)
-values(reply_seq.NEXTVAL , #{rno} , #{bno}, #{memberId}, TO_CHAR(SYSDATE, 'YYYY.MM.DD HH24:MI:SS') , #{rcontents}) 
-</insert>
-
-<delete id="replyDelete" parameterType="BoardDTO">
-delete from reply 
-where rno = #{rno} and bno = #{bno} 
+where bno = #{bno}
 </delete>
 
 </mapper>

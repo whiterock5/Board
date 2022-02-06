@@ -31,15 +31,6 @@ public class BoardDAO {
 		return sqlSessionTemplate.selectList("boardSearch", boardDTO);	
 	}
 	
-	
-	public List<BoardDTO> ReplySelect(int bno) {
-		return sqlSessionTemplate.selectList("replySelect" , bno);	
-	}
-	
-	public int ReplyCheck(BoardDTO boardDTO) {
-		return sqlSessionTemplate.selectOne("replyCheck" , boardDTO);
-	}
-	
 	@Transactional
 	public void BoardInsert(BoardDTO boardDTO) {
 		sqlSessionTemplate.insert("boardInsert" , boardDTO);	
@@ -54,13 +45,5 @@ public class BoardDAO {
 	}
 	public void BoardHit(int bno) {
 		sqlSessionTemplate.update("boardHit" , bno);	
-	}
-	
-	public void ReplyInsert(BoardDTO boardDTO) {
-		sqlSessionTemplate.insert("replyInsert" , boardDTO);	
-	}
-
-	public void ReplyDelete(BoardDTO boardDTO) {
-		sqlSessionTemplate.delete("replyDelete" , boardDTO);
 	}
 }

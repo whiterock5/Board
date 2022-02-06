@@ -48,8 +48,8 @@ public class LoginController {
 		returnURL = "";
 
 		if (result == 1) {
-			session.setAttribute("login", memberDTO.getMemberId());
-			
+			request.getSession().setAttribute("login", memberDTO.getMemberId());
+						
 			returnURL = "redirect:./index.jsp";
 		} else {
 			returnURL = "./login/loginFail";
@@ -63,7 +63,8 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/LogOut", method = RequestMethod.GET)
-	public String Logout() {
+	public String Logout(HttpServletRequest request) {
+		session = request.getSession();
 		session.invalidate();
 		return "redirect:./index.jsp";
 	}

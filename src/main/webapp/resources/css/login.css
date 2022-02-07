@@ -11,7 +11,7 @@ lable.away { position: absolute; left: -999em; }
 
 body{
 	
-	background-color: HSL(200, 33% ,96%) ;
+	background-color: #111 ;
 
 }
 
@@ -19,23 +19,22 @@ body{
 	
 	width : 450px;
 	height: 5px;
-	background-color: #007bff; 
+	background-color: #444; 
 	
 }
 
 .login {
 	display:block;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 200px;
     display: block;
     width: 400px;
     height: 460px;
     border: none;
-    background-color: white;
+    background-color: #222;
     border-radius: 8px; 
     overflow: hidden;   
     text-align: center;
-    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, 0.2);
     
 }
 
@@ -44,7 +43,7 @@ body{
 	display:block;
     font-size: 20px;
     font-weight: 400;
-    color: #000;
+    color: #fff;
     margin-bottom: 30px;
     
 }
@@ -62,16 +61,16 @@ body{
 .login_text{
     width: 330px;
     height: 45px;
-    border: solid 1px #e8e8e8;
+    border: solid 1px #43494C;
     padding: 0 10px;
-    color: #333;
+    color: #e2e2e2;
+    background-color: #333;
     font-size: 14px;
     border-radius: 8px;
-    box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
 }
 
 .login_text::placeholder{
-    color:#aaa;
+    color:#e2e2e2;
 }
 
 
@@ -83,12 +82,6 @@ body{
     margin-top: 25px;
     margin-bottom: 15px;
     font-size: 18px;
-    font-weight: bold;
-    background : #007bff;
-    color : #fff;
-    border: none;
-    border-radius: 8px;
-
 }
 
 .login_sub {
@@ -96,7 +89,7 @@ body{
     width:  400px;
     height: 80px;
     border: none;
-    background-color: HSL( 200 , 25%, 94% );
+    background-color: #333;
     margin: 0 auto;
     font-size: 16px;
     text-align: center;
@@ -114,10 +107,12 @@ body{
     margin-left: 52px;
     font-weight: 700;
 }
-.blue{
-
-    color:#007bff;
-
+.signup{
+    color:#e2e2e2;
+   	font-size: 16px;
+}
+.signup:hover{
+	color:#fff;
 }
 
 .blue2 {

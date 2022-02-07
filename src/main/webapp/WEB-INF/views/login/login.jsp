@@ -4,10 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/login.css">
 <script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="./js/login.js"></script>
 <script type="text/javascript" src="./js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 <title>로그인</title>
 </head>
 
@@ -30,12 +32,12 @@
 						placeholder="String memberPassword varchar2(30)"
 						name="memberPassword" id="memberPassword" maxlength="30">
 				</div>
-				<button type="submit" class="btn-login">로그인</button>
+				<button type="submit" class="btn-login btn btn-outline-light">로그인</button>
 			</fieldset>
 		</form>
 		<div class="SideMenu">
 			<div class="login_sub">
-				<a href="./SignUp" class="blue"> 회원가입하기 </a>
+				<a href="./SignUp" class="signup"> 회원가입 </a>
 			</div>
 
 		</div>

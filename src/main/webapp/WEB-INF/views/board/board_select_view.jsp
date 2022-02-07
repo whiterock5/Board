@@ -51,11 +51,11 @@
 			<div>
 				<c:if
 					test="${boardDTO.memberId eq sessionScope.login or 'admin' eq sessionScope.login}">
-					<a class="btn btn-outline-light btn-sm"
+					<a class="btn btn_width btn-outline-light btn-sm"
 						href="./BoardUpdate?Bno=${boardDTO.bno}"><i
 						class="bi bi-pencil-square"></i>&nbsp; 수정</a>
 					<a onclick="return confirm('정말로 글을 삭제하시겠습니까 ?');"
-						class="btn btn-outline-light btn-sm"
+						class="btn btn_width btn-outline-light btn-sm"
 						href="./BoardDelete?Bno=${boardDTO.bno}"><i
 						class="bi bi-x-square"></i>&nbsp; 삭제</a>
 				</c:if>
@@ -101,10 +101,9 @@
 			<div>
 				댓글 작성
 				<form>
-					<textarea id="rcontents" name="rcontents"></textarea>
-					<input type="button" id="btnReplySave" name="btnReplySave"
-						value="작성"> <input type="hidden" value="${boardDTO.bno}"
-						id="bno" name="bno"> <input type="hidden"
+					<textarea id="rcontents" name="rcontents" spellcheck="false"></textarea>
+					<input type="button" class="btn btn-outline-light" id="btnReplySave" name="btnReplySave" value="등록"> 
+					<input type="hidden" value="${boardDTO.bno}" id="bno" name="bno"> <input type="hidden"
 						value="${sessionScope.login}" id="memberId" name="memberId">
 				</form>
 			</div>

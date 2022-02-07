@@ -1,5 +1,5 @@
-*{
-	margin : 0;
+* {
+	margin: 0;
 	padding: 0;
 }
 
@@ -7,44 +7,47 @@ label {
 	margin: 0;
 	padding: 0;
 }
+
 .out {
 	display: block;
 	position: absolute;
 	left: 9999px;
 }
+
 .board {
 	background-color: #222;
 	padding: 15px;
 	border: 1px solid #bbb;
-	border-top : 0;
-	background-color: #222; 
+	border-top: 0;
+	background-color: #222;
 }
-.title { 
-	width:100%;
+
+.title {
+	width: 100%;
 	margin-top: 10px;
-	border-bottom: 1px solid #bbb; 
-	border-top: 1px solid #bbb; 
+	border-bottom: 1px solid #bbb;
+	border-top: 1px solid #bbb;
 	padding: 6px;
 	font-size: 18px;
-	color : #e2e2e2;
-	}
-	
-.title-sub{
-	font-size : 12px;
+	color: #e2e2e2;
+}
+
+.title-sub {
+	font-size: 12px;
 	color: #e2e2e2;
 	font-weight: normal;
-	
 }
 
 .nav-tab {
 	width: 100%;
 }
+
 .nav-tab a {
 	width: 50px;
-	display:inline-block;
-	color : #9ba0a4;
+	display: inline-block;
+	color: #9ba0a4;
 	border: 1px solid #5a5a64;
-	border-bottom: none;		
+	border-bottom: none;
 	text-align: center;
 	border-collapse: collapse;
 }
@@ -57,25 +60,23 @@ label {
 .board-table tr {
 	border-top: 1px solid #5a5a64;
 	border-bottom: 1px solid #5a5a64;
-	font-size:14px;
+	font-size: 14px;
 	color: #e2e2e2;
 	padding: 5px;
 	height: 35px;
-	
 }
 
 #searchType {
-	color : #e2e2e2;
+	color: #e2e2e2;
 	background: #111;
 	border: 1px solid #5a5a64;
 }
 
 #searchName {
-	color : #e2e2e2;
+	color: #e2e2e2;
 	background: #111;
 	border: 1px solid #5a5a64;
 }
-
 
 .title_insert {
 	width: 100%;
@@ -85,10 +86,10 @@ label {
 	box-sizing: border-box;
 }
 
-.titleLabel{
+.titleLabel {
 	height: 100%;
 	margin: 0;
-	color : #e2e2e2;
+	color: #e2e2e2;
 	width: 6%;
 	border-right: 1px solid #5a5a64;
 	text-align: center;
@@ -96,17 +97,17 @@ label {
 	box-sizing: border-box;
 }
 
-.tap { 
+.tap {
 	width: 10%;
 	border-bottom: 0;
- }
+}
 
 #title {
 	height: 100%;
 	margin: 0;
 	width: 92%;
 	background-color: #222;
-	color : #e2e2e2;
+	color: #e2e2e2;
 	box-sizing: border-box;
 	border: none;
 	box-shadow: 0;
@@ -114,19 +115,19 @@ label {
 }
 
 #contents {
-	margin-top : 10px;
+	margin-top: 10px;
 	padding: 20px;
 	width: 100%;
 	border: 1px solid #5a5a64;
 	border-radius: 8px;
 }
 
-.hl { 
+.hl {
 	background-color: #333;
 	padding-left: 10px;
-	}
-	
-.boardid{
+}
+
+.boardid {
 	margin: 0;
 	color: #e2e2e2;
 	font-size: 14px;
@@ -134,7 +135,7 @@ label {
 	padding-left: 10px;
 }
 
-.contents{
+.contents {
 	margin: 0;
 	color: #e2e2e2;
 	border-top: none;
@@ -142,31 +143,72 @@ label {
 	padding: 15px;
 	background-color: #222;
 	min-height: 300px;
-    overflow-y: hidden;
-    resize: none;
-	cursor:auto;
+	overflow-y: hidden;
+	resize: none;
+	cursor: auto;
 	height: auto;
 }
 
-.contents:focus{
+.contents:focus {
 	outline: none;
 }
 
-.division{
-	
+.division {
 	font-size: 12px;
 	background-color: #333;
 	border-radius: 5px;
-	padding: 2px;	
+	padding: 2px;
 }
 
-.margin_top20{
+.margin_top20 {
 	margin-top: 20px;
 }
 
-.search{
+.search {
 	height: 31px;
 	font-size: 14px;
 }
 
-.insert { margin-top: 20px;}
+.insert {
+	margin-top: 20px;
+}
+
+.reply {
+	width: 100%;
+	border: 1px solid #43494C;
+	margin: 10px;
+	margin-left: 0px;
+}
+
+.rtitle {
+	display : inline-block;
+	width: 100%;
+	border-bottom: 1px dashed #43494C;
+	background-color : #333;
+	padding: 6px;
+	font-size: 16px;
+	color: #e2e2e2;
+}
+.reply_read {
+	padding: 8px;
+}
+
+.rdelete {
+	color : #e2e2e2;
+}
+
+.rdelete:hover {
+	color : #fff;
+	cursor: pointer;
+}
+
+#rcontents{
+	width: 100%;
+	height : 150px;
+	resize: none;
+	background-color : #333;
+	color : #e2e2e2;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	border: 1px solid #43494C;
+}

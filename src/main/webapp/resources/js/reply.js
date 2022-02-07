@@ -15,16 +15,21 @@ function getreplylist(){
 			comments = "등록된 댓글이 없습니다.";
 		}else{
 			$(result).each(function(){
-				comments +=	'<div class="title">';
-				comments +=	'작성자 :'+ this.memberId+ '작성일 :'+ this.rwritingTime + '|' ;
+				comments += '<div class="reply">'
+				comments +=	'<div class="rtitle">';
+				comments +=	'<div class="left">'+this.memberId + ' <i class="bi bi-person-fill"></i></div>';   
+				comments += '<div class="right">'+ this.rwritingTime + ' | ' ;
 				
 				if(memberId == this.memberId){
-					comments +=	'<a onclick="replyDelete('+this.rno+')"><i class="bi bi-x-square"></i>삭제</a>';
-					
+					comments +=	'<a class="rdelete" onclick="replyDelete('+this.rno+')"><i class="bi bi-trash-fill"></i>삭제</a>';
 				}
-
-				comments +=	'내용 :'+ this.rcontents;
+				comments += '</div>'
+				comments += '</div>'
+				comments += '<div class="reply_read">'	
+				comments +=	this.rcontents;
 				comments += "</div>";
+				comments += "</div>";
+			
 			});
 		};
 		$("#comments").html(comments);

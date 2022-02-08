@@ -1,4 +1,4 @@
-# MVC_Project
+# Board
 ![image](https://user-images.githubusercontent.com/90433847/152989830-d521026e-6486-4fa0-969b-bcc41d443045.png)
 #### 프로젝트 소개
    웹 프로그래밍의 기초라 할 수 있는 기본적인  CRUD기능을 가진 게시판을 만든 프로젝트입니다. <br/>

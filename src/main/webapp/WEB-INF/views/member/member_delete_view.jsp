@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> 부서 정보 삭제 </title>
+<title> 회원 정보 삭제 </title>
 <link rel="stylesheet" type="text/css" href="./css/bootstrap.min_4.5.0.css">
 <script src="./js/jquery-3.5.1.min.js" type="text/javascript"></script>
 <script src="./js/bootstrap.min_4.5.0.js" type="text/javascript"></script>

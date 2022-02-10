@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> 게시판 </title>
+<title>이것저것 게시판 - 글작성</title>
 </head>
 <body>
 <script type="text/javascript">

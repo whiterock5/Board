@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title> 부서 입력 </title>
+<title> 회원 입력 </title>
 
 <c:forEach var="arrayList" items="${arrayList}">
 
